@@ -1,7 +1,6 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
 
 html, body, #root {
   margin: 0;
@@ -11,19 +10,6 @@ html, body, #root {
   font-family: 'Orbitron', sans-serif;
 }
 
-.text-neon {
-  cursor: pointer;
-  letter-spacing: 0.2em;
-  text-shadow:
-    0 0 2px #00bfff,   
-    0 0 5px #00bfff,
-    0 0 10px #00bfff,
-    0 0 20px #00d4ff,
-    0 0 30px #00d4ff,
-    0 0 40px #00d4ff,
-    0 0 60px #00d4ff,
-    0 0 80px #00d4ff; 
-}
 
 .border-neon {
   box-shadow:
@@ -36,6 +22,16 @@ html, body, #root {
     0 0 10px #00d4ff,
     0 0 10px #00d4ff;
 }
+
+.clip-path-circle {
+  clip-path: circle(100%);
+}
+.clip-path-closed {
+  clip-path: circle(0%);
+}
+
+
+
 
 
 

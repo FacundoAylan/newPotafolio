@@ -1,19 +1,23 @@
-const menu =['Inicio', 'Sobre mi', 'Proyectos', 'Contactos'];
+const menu = ['Inicio', 'Sobre mi', 'Proyectos', 'Contactos'];
 
-const NavBar = ()=>{
+const NavBar = ({setFace})=>{
   return(
-    <div className="w-full h-full flex justify-between px-2 text-white items-center font-bold">
+    <div className="w-full h-full flex justify-between px-2 items-center text-[#0EC143] tracking-widest cursor-pointer">
       {/*Logo */}
       <div>
-        <h1 className="text-neon hover:scale-110">Facundo</h1>
+        <h1 className="hover:scale-110">Facundo</h1>
       </div>
       {/*menu */}
       <div> 
         <ul>
-          {menu && menu.map((items)=>{
+          {menu.map((item, index)=>{
             return(
-              <li key={items} className="inline-block px-4 text-neon hover:scale-110">
-                {items}
+              <li 
+                key={index} 
+                className="inline-block px-4 hover:scale-110"
+                onClick={()=>setFace(index)}
+              >
+                {item}
               </li>
             )
           })}      
