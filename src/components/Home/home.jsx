@@ -1,6 +1,11 @@
+import {
+  AiOutlineClose,
+  AiOutlineExpand,
+  AiOutlineMinus,
+} from "react-icons/ai";
 import avatar from "../../assets/avatar.png";
 import bg from "../../assets/background.png";
-import { SiArchlinux } from "react-icons/si";
+
 const Home = () => {
   return (
     <div className="w-full h-full flex">
@@ -17,81 +22,87 @@ const Home = () => {
 
       {/*Contenedor de información */}
       <section className="pt-14 w-1/2 h-screen flex justify-center items-center">
-        <div className="relative w-[98%] h-[85%] flex flex-col items-start gap-2 justify-center backdrop-blur-md bg-[#101010] pl-2 border-6  rounded-[10px] border-[#039ea6] border-double shadow-[0px_0px_10px_4px_#039ea6] font-mono text-green-400">
-          {/* Barra de título estilo Linux */}
-          <div className="absolute top-0 left-0 w-full h-10 flex items-center justify-between bg-[#252525] text-white border-b border-gray-600 rounded-t-[8px] px-4">
-            <p className="text-sm text-gray-300">
-              Terminal - Facundo@archlinux
-            </p>
-            <div className="flex gap-3 text-gray-400">
-              <p className="hover:text-white cursor-pointer">🗕</p>{" "}
-              {/* Minimizar */}
-              <p className="hover:text-white cursor-pointer">🗖</p>{" "}
-              {/* Maximizar */}
-              <p className="hover:text-red-500 cursor-pointer">✖</p>{" "}
-              {/* Cerrar */}
-            </div>
-          </div>
-          <div className="flex flex-col mt-4 gap-1">
-            <p className="text-lg text-green-400 animate-pulse">
-              {">>>"}Sincronizando bases de datos... ✅
-            </p>
-
-            <p className="text-lg text-green-400 font-bold">
-              {">>>"}Información Personal
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 w-full text-green-400 text-sm sm:text-base md:text-lg font-mono leading-relaxed">
-              {/* Ícono de Arch Linux grande y visible */}
-              <div className="w-full sm:w-auto flex items-center justify-center sm:justify-start">
-                <SiArchlinux
-                  size={150}
-                  className="text-green-400"
-                />
-              </div>
-
-              {/* Información personal */}
-              <div className="flex flex-col gap-1 px-2 sm:px-0 text-green-400 py-2">
-                <span>
-                  <span className="text-green-300">~</span> Nombre:{" "}
-                  <span className="font-bold">Facundo Aylan</span>
+        <div className="relative w-[98%] h-[85%]  backdrop-blur-md bg-[#101010] border-6  rounded-[10px] border-[#039ea6] border-double shadow-[0px_0px_10px_4px_#039ea6] font-mono text-green-400">
+          <div className="w-full h-full border-2 border-gray-800 rounded-lg overflow-hidden bg-gray-900 text-gray-300 font-mono">
+            {/* Barra de título */}
+            <div className="flex items-center justify-between bg-gray-800 px-2 py-1">
+              <p className="text-sm text-white/80 font-bold">
+                Visual Studio Code - Bienvenidos.jsx
+              </p>
+              <div className="flex space-x-2">
+                <span className="w-4 h-4 text-yellow-500">
+                  <AiOutlineMinus />
                 </span>
-                <span>
-                  <span className="text-green-300">~</span> Profesión:{" "}
-                  <span className="font-bold">Desarrollador Full-Stack</span>
+                <span className="w-4 h-4 text-green-500">
+                  <AiOutlineExpand />
                 </span>
-                <span>
-                  <span className="text-green-300">~</span> Habilidad:{" "}
-                  <span className="font-bold">Aplicaciones web y móviles</span>
-                </span>
-                <span>
-                  <span className="text-green-300">~</span> Ubicación:{" "}
-                  <span className="font-bold">Argentina</span>
+                <span className="w-4 h-4 text-red-500">
+                  <AiOutlineClose />
                 </span>
               </div>
             </div>
 
-            <p className="text-lg text-green-400 font-bold">{">>>"} Redes</p>
-          </div>
+            {/* Área de código */}
+            <div className="pl-4 pt-1 text-md flex gap-4">
+              {/* Código */}
+              <div>
+                <p className="text-blue-400">{`import React from 'react';`}</p>
+                <p className="text-purple-400 mt-1">{`function Bienvenidos() {`}</p>
+                <p className="pl-4 text-purple-400">{`return (`}</p>
+                <p className="pl-8 text-yellow-400">{`<main>`}</p>
 
-          {/* Redes Sociales con estilo terminal */}
-          <div className="flex gap-4 mt-4 w-full justify-center items-center">
-            <a
-              href="https://github.com/tuUsuario"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-2 bg-green-600 rounded-[5px] text-gray-900 font-bold tracking-widest transition-transform duration-300 hover:scale-110"
-            >
-              🖥️ git clone GitHub
-            </a>
-            <a
-              href="https://linkedin.com/in/tuUsuario"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-2 bg-green-600 rounded-[5px] text-gray-900 font-bold tracking-widest transition-transform duration-300 hover:scale-110"
-            >
-              🔗 curl LinkedIn
-            </a>
+                <div className="text-green-500 pl-14 text-md rounded-md shadow-lg text-gray-300">
+                  <p>
+                    {`<h1>`}<span className="font-bold px-1">Hola, soy Facundo</span>{`</h1>`}
+                  </p>
+                  <p>
+                    {`<h2>`}
+                    <span className="font-semibold px-1">
+                      Desarrollador Full Stack
+                    </span>
+                    {`</h2>`}
+                  </p>
+                  <p>
+                    {`<p>`}
+                    <span className="px-1 font-semibold">Apasionado por la tecnología</span>
+                    {`</p>`}
+                  </p>
+                  <p>
+                    {`<h3>`}
+                    <span className="px-1 font-semibold">Aprendiendo React y Node.js.</span>
+                    {`</h3>`}
+                  </p>
+                </div>
+
+                <p className="pl-14 text-green-500">
+                  {`<a href='/' target='_blank'>`}
+                  <a
+                    href="https://github.com/FacundoAylan"
+                    target="_blank"
+                    className="font-bold hover:scale-105 hover:cursor-pointer transition-transform duration-200 inline-block px-2"
+                  >
+                    Github
+                  </a>
+                  {`</a>`}
+                </p>
+                <p className="pl-14 text-green-500">
+                  {`<a href='/' target='_blank'>`}
+                  <a
+                    href="https://www.linkedin.com/in/facundo-aylan-582b52257/"
+                    target="_blank"
+                    className="px-2 hover:scale-105 hover:cursor-pointer transition-transform duration-200 inline-block font-bold"
+                  >
+                    LinkedIn
+                  </a>
+                  {`</a>`}
+                </p>
+
+                <p className="pl-8 text-yellow-400">{`</main>`}</p>
+                <p className="pl-4 text-purple-400">{`);`}</p>
+                <p className="text-purple-400">{`}`}</p>
+                <p className="text-blue-400">{`export default Bienvenidos;`}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
