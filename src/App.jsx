@@ -37,7 +37,7 @@ const App = () => {
           return (
             <div
               key={index}
-              className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-1300 ease-in-out ${
+              className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-600 ease-in-out ${
                 isActive
                   ? "scale-100 opacity-100 z-40 clip-path-circle"
                   : isPrevious
