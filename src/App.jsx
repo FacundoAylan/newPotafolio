@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div className="w-full h-screen m-0 p-0 bg-[#101010]">
-      <div className="fixed z-50 w-full h-14 backdrop-blur-md bg-[#101010]/30 border-b-2 border-white/70">
+      <div className="fixed z-50 w-full h-14 backdrop-blur-md bg-[#101010]/30 border-b-2 border-[#0EC143] text-[#0EC143]">
         <NavBar setFace={handleSetFace} />
       </div>
 

@@ -17,38 +17,37 @@ const Home = () => {
       </section>
 
       {/*Contenedor de información */}
-      <section className="pt-14 relative w-1/2 h-full flex flex-col justify-center items-center  text-white gap-4">
-        {/* Título */}
-        <h1 className="text-[#0EC143] w-full text-6xl font-black tracking-wide text-center uppercase">
-          Full Stack Developer
-        </h1>
+      <section className="pt-14 relative w-1/2 h-screen flex flex-col justify-center items-end text-white gap-6">
+      <div className="w-[98%] h-[80%] flex flex-col items-center gap-2 justify-center rounded-lg backdrop-blur-lg bg-white/5 p-4 border-6 border-r-0 rounded-r-none rounded-tl-[20px] rounded-bl-[20px] border-[#039ea6] border-double shadow-[0px_0px_10px_4px_#039ea6]">
+      {/* Título con animación */}
+          <h1 className="text-6xl font-black text-[#0EC143] text-center">
+            ¡Hola, soy Facundo Aylan! 👨‍💻
+          </h1>
+          <p className="text-2xl text-gray-300 text-center">
+            Desarrollador Full Stack | Creando soluciones digitales eficientes 🚀
+          </p>
 
-        {/* Nombre */}
-        <p className="text-3xl text-[#33A6A6] text-center font-semibold">
-          Facundo Aylan
-        </p>
-
-        {/* Redes Sociales */}
-        <div className="flex gap-6 mt-6 w-full max-w-md justify-center">
-          <a
-            href="https://github.com/tuUsuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="tracking-wide border border-[#33A6A6] rounded-lg px-5 py-3 font-black transition-transform duration-300 hover:scale-110 bg-[#00525e] text-white shadow-md hover:bg-[#007a85]"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="https://linkedin.com/in/tuUsuario"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="border border-[#33A6A6] rounded-lg px-5 py-3 font-black tracking-wide transition-transform duration-300 hover:scale-110 bg-[#00525e] text-white shadow-md hover:bg-[#007a85]"
-          >
-            LinkedIn
-          </a>
+          {/* Redes Sociales con efecto neón */}
+          <div className="flex gap-6 mt-2 w-full max-w-lg justify-center">
+            <a
+              href="https://github.com/tuUsuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="px-6 py-3 font-black rounded-lg border border-[#0EC143] text-white bg-transparent transition-transform duration-300 hover:scale-110 shadow-neon"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/tuUsuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="px-6 py-3 font-black rounded-lg border border-[#0EC143] text-white bg-transparent transition-transform duration-300 hover:scale-110 shadow-neon"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </section>
     </div>
