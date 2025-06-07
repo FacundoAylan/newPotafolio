@@ -3,7 +3,7 @@ import Home from "./components/Home/home";
 import NavBar from "./components/NabBar/NavBar";
 import AboutMe from "./components/About/About";
 import Proyects from "./components/Proyects/Proyects";
-import Contacts from "./components/Contacts/Contacts";
+import Contact from "./components/Contacts/Contacts";
 
 const App = () => {
   const [face, setFace] = useState(0);
@@ -13,7 +13,7 @@ const App = () => {
     { id: 0, content: <Home /> },
     { id: 1, content: <AboutMe /> },
     { id: 2, content: <Proyects /> },
-    { id: 3, content: <Contacts /> },
+    { id: 3, content: <Contact /> },
   ];
 
   const handleSetFace = (newFace) => {
