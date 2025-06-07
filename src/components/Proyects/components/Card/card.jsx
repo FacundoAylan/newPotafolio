@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
-const CardProyects = ({projects, nextProject, prevProject, activeIndex, openVideoModal})=>{
+const CardProyects = ({projects, nextProject, prevProject, activeIndex, openVideoModal, openDescriptionModal})=>{
   return(
     <div className="relative w-[80%] h-[60%] flex justify-center items-center">
     <button

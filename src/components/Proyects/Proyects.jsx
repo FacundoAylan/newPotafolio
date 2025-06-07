@@ -72,6 +72,7 @@ const Proyects = () => {
         prevProject={prevProject}
         activeIndex={activeIndex}
         openVideoModal={openVideoModal}
+        openDescriptionModal={openDescriptionModal}
       />
       {/* Modal de Video */}
       {showVideoModal && currentProject && (
