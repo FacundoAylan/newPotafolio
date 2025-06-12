@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Home from "./components/Home/home";
-import NavBar from "./components/NabBar/NavBar";
-import AboutMe from "./components/About/About";
-import Proyects from "./components/Proyects/Proyects";
-import Contact from "./components/Contacts/Contacts";
+import Home from "./components/02-Home/home";
+import NavBar from "./components/01-Navbar/NavBar";
+import AboutMe from "./components/03-About/About";
+import Proyects from "./components/04-Proyects/Proyects";
+import Contact from "./components/05-Contacts/Contacts";
 
 const App = () => {
   const [face, setFace] = useState(0);
