@@ -3,7 +3,6 @@ import { Typewriter } from "react-simple-typewriter";
 
 const codigo = [
   `import React from 'react';`,
-  ` `,
   `function Portafolio() {`,
   `  return (`,
   `    <main>`,
@@ -26,7 +25,7 @@ const PresentacionAnimada = () => {
   const [lineasCompletadas, setLineasCompletadas] = useState([]);
   const [lineaActual, setLineaActual] = useState("");
   const [index, setIndex] = useState(0);
-  const typeSpeed = 5; // Velocidad de escritura en ms por carácter
+  const typeSpeed = 15; // Velocidad de escritura en ms por carácter
   
   useEffect(() => {
     if (fase === 'codigo' && index < codigo.length) {
