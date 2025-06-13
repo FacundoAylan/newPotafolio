@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const codigo = [
   `import React from 'react';`,
-  ``,
+  ` `,
   `function Portafolio() {`,
   `  return (`,
   `    <main>`,
@@ -15,65 +16,75 @@ const codigo = [
   `    </main>`,
   `  );`,
   `}`,
-  ``,
-  `export default Portafolio;`
+  `export default Portafolio;`,
 ];
 
 const PresentacionAnimada = () => {
-  const [lineas, setLineas] = useState([]);
-  const [fase, setFase] = useState('codigo'); // 'codigo' | 'spinner' | 'resultado'
-  const indexRef = useRef(0);
+  const [fase, setFase] = useState("codigo"); // 'codigo' | 'spinner' | 'resultado'
 
-  useEffect(() => {
-    if (fase === 'codigo') {
-      const escribir = () => {
-        const currentIndex = indexRef.current;
-        if (currentIndex < codigo.length) {
-          setLineas((prev) => [...prev, codigo[currentIndex]]);
-          indexRef.current += 1;
-          setTimeout(escribir, 200);
-        } else {
-          setTimeout(() => setFase('spinner'), 4000);
-        }
-      };
-      escribir();
-    }
-  }, [fase]);
   
-
+  const [lineasCompletadas, setLineasCompletadas] = useState([]);
+  const [lineaActual, setLineaActual] = useState("");
+  const [index, setIndex] = useState(0);
+  const typeSpeed = 5; // Velocidad de escritura en ms por carácter
+  
   useEffect(() => {
-    if (fase === 'spinner') {
-      const timeout = setTimeout(() => {
-        setFase('resultado');
-      }, 1000); // duración del spinner
-      return () => clearTimeout(timeout);
+    if (fase === 'codigo' && index < codigo.length) {
+      const tiempoEscritura = codigo[index].length * typeSpeed;
+
+      setLineaActual(codigo[index]);
+
+      setTimeout(() => {
+        setLineasCompletadas((prev) => [...prev, codigo[index]]);
+        setLineaActual('');
+        if (index === codigo.length - 1) {
+          setTimeout(() => setFase('spinner'), 500); // Activar spinner después de última línea
+        } else {
+          setIndex(index + 1);
+        }
+      }, tiempoEscritura + 200);
     }
-  }, [fase]);
+
+    if (fase === 'spinner') {
+      setTimeout(() => setFase('resultado'), 500); // Duración del spinner antes de resultado
+    }
+  }, [index, fase]);
 
   return (
     <div className="w-full h-full text-green-400 font-mono flex flex-col items-center justify-center transition-all duration-700">
-      {fase === 'codigo' && (
-        <div className=" w-full h-full px-2 transition-all duration-1200">
-          {lineas.map((line, index) => (
-            <pre
-              key={index}
-              className="whitespace-pre-wrap opacity-0 animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
-            >
+      {fase === "codigo" && (
+        <div className="w-full h-full px-2 transition-all duration-1200">
+          {lineasCompletadas.map((line, i) => (
+            <pre key={i} className="whitespace-pre-wrap opacity-100">
               {line}
             </pre>
           ))}
+
+          {/* Mostrar solo la línea que se está escribiendo */}
+          {lineaActual && (
+            <pre className="whitespace-pre-wrap opacity-100">
+              <Typewriter
+                words={[lineaActual]}
+                loop={false}
+                deleteSpeed={0}
+                cursor={true}
+                typeSpeed={typeSpeed}
+              />
+            </pre>
+          )}
         </div>
       )}
 
-      {fase === 'spinner' && (
+      {fase === "spinner" && (
         <div className="flex items-center justify-center text-white text-lg flex-col gap-2">
           <div className="animate-spin border-cyan-400 rounded-full h-12 w-12 border-2 border-t-transparent"></div>
-          <div className="text-2xl animate-pulse text-cyan-400 mt-4">Cargando<span className="dots">...</span></div>
+          <div className="text-2xl animate-pulse text-cyan-400 mt-4">
+            Cargando<span className="dots">...</span>
+          </div>
         </div>
       )}
 
-      {fase === 'resultado' && (
+      {fase === "resultado" && (
         <div className="mt-8 text-white text-center transition-opacity duration-1000 opacity-100">
           <h1 className="text-3xl font-bold">Hola, soy Facundo</h1>
           <h2 className="text-xl mt-2">Desarrollador Full Stack</h2>
